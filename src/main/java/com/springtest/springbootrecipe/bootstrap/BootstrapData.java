@@ -16,7 +16,7 @@ public class BootstrapData implements CommandLineRunner {
     @Override
     public void run(String... args)  {
         Recipe r1 = new Recipe();
-        r1.setName("R1");
+        r1.setDescription("R1");
         recipeBook.save(r1);
 
     }
