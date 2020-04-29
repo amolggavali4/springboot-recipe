@@ -1,9 +1,9 @@
-package com.springtest.springbootrecipe.repository;
+package com.springtest.springbootrecipe.repositories;
 
 import com.springtest.springbootrecipe.model.Recipe;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RecipeBook extends CrudRepository<Recipe, Long> {
+public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 }
