@@ -1,9 +1,13 @@
 package com.springtest.springbootrecipe.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
 
+@EqualsAndHashCode(exclude = "recipes")
+@Data
 @Entity
 public class Category {
     @javax.persistence.Id
@@ -22,19 +26,4 @@ public class Category {
         Id = id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
-    }
 }

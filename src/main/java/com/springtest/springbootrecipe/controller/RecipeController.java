@@ -4,12 +4,14 @@ import com.springtest.springbootrecipe.model.Category;
 import com.springtest.springbootrecipe.model.UnitOfMeasure;
 import com.springtest.springbootrecipe.repositories.CategoryRepository;
 import com.springtest.springbootrecipe.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class RecipeController {
     private final UnitOfMeasureRepository  unitOfMeasureRepository;
@@ -23,6 +25,7 @@ public class RecipeController {
 
     @RequestMapping({"recipes","/recipes","/recipes.html"})
     public String showAll(Model model){
+        log.debug("RecipeController showAll...");
         //model.addAttribute("recipes", recipeBook.findAll());
         Optional<Category> optionalCategory = categoryRepository.findByDescription("Indian");
         Optional<UnitOfMeasure> optionalUnitOfMeasure = unitOfMeasureRepository.findByUom("Pinch");
